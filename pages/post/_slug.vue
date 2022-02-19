@@ -71,14 +71,12 @@
             <p v-html="description" />
           </div>
           <!-- End Post Content -->
-
           <!-- Begin Tags -->
           <div class="after-post-tags">
             <ul class="tags">
-              <li><a href="#">Design</a></li>
-              <li><a href="#">Growth Mindset</a></li>
-              <li><a href="#">Productivity</a></li>
-              <li><a href="#">Personal Growth</a></li>
+              <li v-for="(t,i) in post.tags" :key="i">
+                <a href="#">{{ t.tag }}</a>
+              </li>
             </ul>
           </div>
           <!-- End Tags -->
