@@ -54,20 +54,26 @@ export default {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'
       },
       {
-        src: 'assets/js/bootstrap.min.js'
+        src: './assets/js/bootstrap.min.js'
       },
       {
-        src: 'assets/js/jquery.min.js'
+        src: './assets/js/jquery.min.js'
       },
       {
-        src: 'assets/js/ie10-viewport-bug-workaround.js'
-      }
-
+        src: './assets/js/ie10-viewport-bug-workaround.js'
+      },
+      {
+        src: './assets/js/bootstrap.min.js'
+      },
+      { src: './assets/js/jquery.min.js' },
+      { src: './assets/js/ie10-viewport-bug-workaround.js' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    './assets/css/bootstrap.min.css',
+    './assets/css/mediumish.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
