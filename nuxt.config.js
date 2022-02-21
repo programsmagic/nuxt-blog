@@ -4,11 +4,16 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'programsmagic',
+    title: 'programsmagic - Learning, Solution for your problems',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Get Free courses with get solutions for regular problem in programmers life, Be A Experts in Programming, Do Something Different, Learn Logic Skills Etc..'
+      },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -54,6 +59,11 @@ export default {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'
       },
       {
+        type: 'text/javascript',
+        src: 'https://platform-api.sharethis.com/js/sharethis.js#property=6213202133b750001954103a&product=sticky-share-buttons',
+        async: 'async'
+      },
+      {
         src: './assets/js/bootstrap.min.js'
       },
       {
@@ -71,14 +81,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    './assets/css/bootstrap.min.css',
-    './assets/css/mediumish.css'
-  ],
+  css: ['./assets/css/bootstrap.min.css', './assets/css/mediumish.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -113,6 +119,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
+

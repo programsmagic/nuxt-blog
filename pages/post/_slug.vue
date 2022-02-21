@@ -34,6 +34,7 @@
                 </a>
               </li>
             </ul>
+            <div class="sharethis-sticky-share-buttons" />
           </div>
         </div>
         <!-- End Fixed Left Share -->
@@ -47,8 +48,8 @@
                 <a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
               </div>
               <div class="col-md-10">
-                <a class="link-dark" href="author.html">Sal</a><a href="#" class="btn follow">Follow</a>
-                <span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
+                <a class="link-dark" href="author.html">Jack</a><a href="#" class="btn follow">Follow</a>
+                <span id="blur" class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
                 <span class="post-date">22 July 2017</span><span class="dot" /><span class="post-read">6 min read</span>
               </div>
             </div>
@@ -65,7 +66,7 @@
           <!-- Begin Post Content -->
           <div class="article-post">
             <blockquote>
-              {{ post.short_description |} '-' }}
+              {{ post.short_description || '-' }}
             </blockquote>
             <!-- <nuxt-content :document="article" /> -->
             <p v-html="description" />
@@ -197,9 +198,6 @@
 <script>
 export default {
   name: 'SinglePost',
-  // components: {
-  //   LayoutHeader: () => import('@/components/layout/Header.vue')
-  // },
   components: {
     Theme: () => import('@/layouts/Theme.vue')
   },
@@ -211,6 +209,39 @@ export default {
 
       return { slug, post: post.data, description: description.data.description }
     }
+  },
+  head () {
+    return {
+      title: 'programsmagic - ' + this.post.title,
+      description: this.post.short_description,
+      meta: [
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.post.short_description
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.post.title
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: 'https://admin.programsmagic.com/public' + this.post.img
+        },
+        {
+          hid: 'og:image:alt',
+          name: 'og:image:alt',
+          content: this.post.title + ''
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: 'https://programsmagic.in/post/' + this.$route.path
+        }
+      ]
+    }
   }
 }
 </script>
@@ -219,5 +250,9 @@ export default {
     padding-top:5rem;
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+   #blur {
+        color: transparent;
+        text-shadow: 0 0 8px #000;
   }
 </style>
