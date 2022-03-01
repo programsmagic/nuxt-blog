@@ -98,7 +98,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@/modules/generator'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -106,9 +107,23 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
-
+  sitemap: {
+    hostname: 'https://programsmagic.in',
+    gzip: true,
+    exclude: [
+      '/loginPage',
+      '/post1',
+      '/post_o'
+    ],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
@@ -133,6 +148,10 @@ export default {
     googleAnalytics: {
       id: 'G-K8FB55XTTC'
     }
-  }
+  },
 
+  loading: {
+    color: 'blue',
+    height: '5px'
+  }
 }
