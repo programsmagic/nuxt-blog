@@ -65,16 +65,17 @@ export default {
     ListPost: () => import('@/components/posts/ListPost')
   },
   async asyncData ({ $axios, store }) {
-    const posts = await $axios.$get('https://blog.programsmagic.in/api/paginate')
+    const [posts, random] = await Promise.all([
+      (await $axios.$get('https://blog.programsmagic.in/api/paginate')),
+      (await $axios.$get('https://blog.programsmagic.in/api/postRrandom')).data
+    ])
     // const top6 = await $axios.$get('https://blog.programsmagic.in/api/paginate?page=2&limit=4', {
     //   body: {
     //     page: 2,
     //     limit: 4
     //   }
     // })
-    const random = await $axios.$get('https://blog.programsmagic.in/api/postRrandom')
-    store.commit('posts/setPosts', random.data)
-
+    store.commit('posts/setPosts', random)
     return { posts }
   },
   data () {
