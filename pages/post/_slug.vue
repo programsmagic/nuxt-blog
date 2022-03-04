@@ -133,6 +133,14 @@ export default {
       title: 'programsmagic - ' + this.post.title,
       description: this.post.short_description,
       meta: [
+
+        // Open Graph
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: this.post.title + '- programsmagic'
+        },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
         {
           hid: 'og:description',
           name: 'og:description',
@@ -157,6 +165,39 @@ export default {
           hid: 'og:url',
           name: 'og:url',
           content: this.postUrl
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.postUrl
+        },
+
+        // Twitter
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        { hid: 'twitter:site', name: 'twitter:site', content: '@nuxt_js' },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: this.postUrl
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.post.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.post.short_description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://admin.programsmagic.com/public' + this.post.img
         }
       ]
     }

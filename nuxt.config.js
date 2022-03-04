@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'programsmagic - Learning, Solution for your problems',
+    title: 'programsmagic - Learn New Way, Get Solution for your problems',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,7 +12,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Get Free courses with get solutions for regular problem in programmers life, Be A Experts in Programming, Do Something Different, Learn Logic Skills Etc..'
+          'Get Free courses with Get Solutions for programming problems in developer life, Be A Expert Coder, Do Something Different, Learn Logic Skills Etc..'
       },
       { name: 'format-detection', content: 'telephone=no' }
     ],
@@ -66,16 +66,16 @@ export default {
       {
         src: './assets/js/bootstrap.min.js'
       },
-      {
-        src: './assets/js/jquery.min.js'
-      },
+      // {
+      //   src: './assets/js/jquery.min.js'
+      // },
       {
         src: './assets/js/ie10-viewport-bug-workaround.js'
       },
       {
         src: './assets/js/bootstrap.min.js'
       },
-      { src: './assets/js/jquery.min.js' },
+      // { src: './assets/js/jquery.min.js' },
       { src: './assets/js/ie10-viewport-bug-workaround.js' }
     ]
   },
@@ -141,12 +141,12 @@ export default {
   build: {},
 
   googleAnalytics: {
-    id: 'G-K8FB55XTTC'
+    id: 'UA-222096942-2'
   },
 
   publicRuntimeConfig: {
     googleAnalytics: {
-      id: 'G-K8FB55XTTC'
+      id: 'UA-222096942-2'
     }
   },
 

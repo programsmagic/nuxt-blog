@@ -15,7 +15,15 @@ export default {
     LayoutFooter: () => import('~/components/layouts/Footer.vue'),
     LayoutHeader: () => import('~/components/layouts/Header.vue')
   },
-  head: {
+  head () {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://www.programsmagic.in/' + this.$route.path
+        }
+      ]
+    }
   }
 }
 </script>
