@@ -141,12 +141,16 @@ export default {
   build: {},
 
   googleAnalytics: {
-    id: 'UA-222096942-2'
+    id: 'UA-222096942-2',
+    layer: 'dataLayer',
+    pageTracking: true
   },
 
   publicRuntimeConfig: {
     googleAnalytics: {
-      id: 'UA-222096942-2'
+      id: 'UA-222096942-2',
+      layer: 'dataLayer',
+      pageTracking: true
     }
   },
 
