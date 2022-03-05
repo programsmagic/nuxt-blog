@@ -112,7 +112,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
   sitemap: {
     hostname: 'https://programsmagic.in',
@@ -161,5 +162,14 @@ export default {
   loading: {
     color: 'blue',
     height: '5px'
-  }
+  },
+
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Disallow: '/auther'
+  },
+
+  generate: { fallback: '404.html' }
+
 }

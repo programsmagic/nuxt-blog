@@ -8,10 +8,10 @@ export default (ctx) => {
     id: 'UA-222096942-2',
     disabled: () => {
       const getGDPR = window.localStorage.getItem('GDPR:accepted')
-      if (typeof getGDPR !== null && getGDPR === 'no') {
+      if (typeof getGDPR !== 'undefined' && getGDPR === 'no') {
         return true
       }
-      if (typeof getGDPR !== null && getGDPR === 'yes') {
+      if (typeof getGDPR !== 'undefined' && getGDPR === 'yes') {
         return false
       }
       return true
