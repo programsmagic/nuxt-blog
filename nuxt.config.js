@@ -1,6 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
+  // target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -118,11 +119,7 @@ export default {
   sitemap: {
     hostname: 'https://programsmagic.in',
     gzip: true,
-    exclude: [
-      '/loginPage',
-      '/post1',
-      '/post_o'
-    ],
+    exclude: ['/loginPage', '/post1', '/post_o'],
     defaults: {
       changefreq: 'daily',
       priority: 1,
@@ -171,5 +168,4 @@ export default {
   },
 
   generate: { fallback: '404.html' }
-
 }

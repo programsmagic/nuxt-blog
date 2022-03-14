@@ -47,8 +47,8 @@
                 <a href="#"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
               </div>
               <div class="col-md-10">
-                <a class="link-dark" href="#">Jack</a><a href="#" class="btn follow">Follow</a>
-                <span id="blur" class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
+                <a class="link-dark" href="#">{{ post.user.name||'Jack' }}</a><a href="#" class="btn follow">Follow</a>
+                <span id="blur" class="author-description">{{ post.user.bio ||'-' }}</span>
                 <span class="post-date">{{ formateDate(post.created_at) }}</span><span class="dot" /><span class="post-read">6 min read</span>
               </div>
             </div>
