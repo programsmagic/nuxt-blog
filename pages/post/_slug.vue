@@ -80,6 +80,7 @@
             </ul>
           </div>
           <!-- End Tags -->
+          <Disqus :page-config="pageConfig" />
         </div>
         <!-- End Post -->
       </div>
@@ -111,10 +112,12 @@
 
 <script>
 import moment from 'moment'
+import { Disqus } from 'vue-disqus'
 
 export default {
   name: 'SinglePost',
   components: {
+    Disqus,
     Theme: () => import('@/layouts/Theme.vue')
   },
   async asyncData ({ route, $axios }) {
@@ -199,7 +202,11 @@ export default {
           name: 'twitter:image',
           content: 'https://admin.programsmagic.com/public' + this.post.img
         }
-      ]
+      ],
+      pageConfig: {
+        title: this.title,
+        category_id: this.post.category_id
+      }
     }
   },
   methods: {

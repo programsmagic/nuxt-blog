@@ -91,6 +91,10 @@ export default {
     {
       src: '~/plugins/vue-google-analytics',
       mode: 'client'
+    },
+    {
+      src: './plugins/disqus.js',
+      mode: 'client'
     }
   ],
 
